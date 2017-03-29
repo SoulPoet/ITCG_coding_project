@@ -1,0 +1,18 @@
+#include "CommonFunc.h"
+
+#ifndef _ITCG_AWGN_CHANNEL_
+    #define _ITCG_AWGN_CHANNEL_
+
+    class Channel {
+    public:
+        double segma;
+
+        Channel();
+        ~Channel();
+        void Init(const char *config_file_path);
+        void transmit(int *in, double *out, int len);
+        void Clean();
+        double CntNoisePower();
+    };
+
+#endif
