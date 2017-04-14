@@ -31,5 +31,5 @@ void Channel::Clean() {
 }
 
 double Channel::CntNoisePower() {
-    return 2.0 * segma * segma;
+    return segma * segma;
 }
