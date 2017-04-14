@@ -1,8 +1,11 @@
 # depslib dependency file v1.0
-1490693758 source:d:\upload from 424\codes\gcc\itcg_coding_project\commonfunc.cpp
+1492134958 source:d:\upload from 424\codes\gcc\itcg_coding_project\awgn_channel.cpp
+	"AWGN_Channel.h"
+
+1490693969 d:\upload from 424\codes\gcc\itcg_coding_project\awgn_channel.h
 	"CommonFunc.h"
 
-1490693816 d:\upload from 424\codes\gcc\itcg_coding_project\commonfunc.h
+1492138773 d:\upload from 424\codes\gcc\itcg_coding_project\commonfunc.h
 	<cstdio>
 	<cmath>
 	<fstream>
@@ -11,16 +14,11 @@
 	<iostream>
 	<time.h>
 	<complex>
-
-1490694128 source:d:\upload from 424\codes\gcc\itcg_coding_project\main.cpp
-	"CommonFunc.h"
-	"Simulator.h"
-
-1490365529 d:\upload from 424\codes\gcc\itcg_coding_project\sourcecreate.h
-	"CommonFunc.h"
-
-1490584990 source:d:\upload from 424\codes\gcc\itcg_coding_project\sourcecreate.cpp
-	"SourceCreate.h"
+	<vector>
+	<queue>
+	<map>
+	<stack>
+	<set>
 
 1490596315 source:d:\upload from 424\codes\gcc\itcg_coding_project\bpsk_modulater.cpp
 	"BPSK_Modulater.h"
@@ -28,84 +26,32 @@
 1490596315 d:\upload from 424\codes\gcc\itcg_coding_project\bpsk_modulater.h
 	"CommonFunc.h"
 
-1490693996 d:\upload from 424\codes\gcc\itcg_coding_project\simulator.h
-	"CommonFunc.h"
-	"SourceCreate.h"
-	"LineEncoder.h"
-	"BPSK_Modulater.h"
-	"AWGN_Channel.h"
-	"Line_BPSK_AWGN_Decoder.h"
-
-1490370953 source:f:\codes\gcc\itcg_coding_project\bpsk_modulater.cpp
-	"BPSK_Modulater.h"
-
-1490370970 f:\codes\gcc\itcg_coding_project\bpsk_modulater.h
+1492138773 source:d:\upload from 424\codes\gcc\itcg_coding_project\commonfunc.cpp
 	"CommonFunc.h"
 
-1490369504 f:\codes\gcc\itcg_coding_project\commonfunc.h
-	<cstdio>
-	<cmath>
-	<fstream>
-	<cstring>
-	<algorithm>
-	<iostream>
-	<time.h>
-
-1490369494 source:f:\codes\gcc\itcg_coding_project\commonfunc.cpp
-	"CommonFunc.h"
-
-1490373208 source:f:\codes\gcc\itcg_coding_project\lineencoder.cpp
-	"LineEncoder.h"
-
-1490368595 f:\codes\gcc\itcg_coding_project\lineencoder.h
-	"CommonFunc.h"
-
-1490372130 source:f:\codes\gcc\itcg_coding_project\main.cpp
+1492135821 source:d:\upload from 424\codes\gcc\itcg_coding_project\main.cpp
 	"CommonFunc.h"
 	"Simulator.h"
 
-1490370806 f:\codes\gcc\itcg_coding_project\simulator.h
+1492133200 d:\upload from 424\codes\gcc\itcg_coding_project\simulator.h
 	"CommonFunc.h"
 	"SourceCreate.h"
 	"LineEncoder.h"
 	"BPSK_Modulater.h"
 	"AWGN_Channel.h"
 
-1490365529 f:\codes\gcc\itcg_coding_project\sourcecreate.h
+1490365529 d:\upload from 424\codes\gcc\itcg_coding_project\sourcecreate.h
 	"CommonFunc.h"
 
-1490374032 f:\codes\gcc\itcg_coding_project\awgn_channel.h
+1492082555 d:\upload from 424\codes\gcc\itcg_coding_project\lineencoder.h
 	"CommonFunc.h"
 
-1490374032 source:f:\codes\gcc\itcg_coding_project\awgn_channel.cpp
-	"AWGN_Channel.h"
+1492139076 source:d:\upload from 424\codes\gcc\itcg_coding_project\simulator.cpp
+	"Simulator.h"
 
-1490365529 source:f:\codes\gcc\itcg_coding_project\sourcecreate.cpp
+1492137521 source:d:\upload from 424\codes\gcc\itcg_coding_project\sourcecreate.cpp
 	"SourceCreate.h"
 
-1490374032 source:f:\codes\gcc\itcg_coding_project\simulator.cpp
-	"Simulator.h"
-
-1490703368 source:d:\upload from 424\codes\gcc\itcg_coding_project\lineencoder.cpp
+1492138201 source:d:\upload from 424\codes\gcc\itcg_coding_project\lineencoder.cpp
 	"LineEncoder.h"
-
-1490693969 d:\upload from 424\codes\gcc\itcg_coding_project\lineencoder.h
-	"CommonFunc.h"
-
-1490693969 d:\upload from 424\codes\gcc\itcg_coding_project\awgn_channel.h
-	"CommonFunc.h"
-
-1490705358 source:d:\upload from 424\codes\gcc\itcg_coding_project\line_bpsk_awgn_decoder.cpp
-	"Line_BPSK_AWGN_Decoder.h"
-
-1490691635 d:\upload from 424\codes\gcc\itcg_coding_project\line_bpsk_awgn_decoder.h
-	"CommonFunc.h"
-	"LineEncoder.h"
-	"AWGN_Channel.h"
-
-1490705414 source:d:\upload from 424\codes\gcc\itcg_coding_project\awgn_channel.cpp
-	"AWGN_Channel.h"
-
-1490705618 source:d:\upload from 424\codes\gcc\itcg_coding_project\simulator.cpp
-	"Simulator.h"
 

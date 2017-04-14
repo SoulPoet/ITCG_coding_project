@@ -40,6 +40,8 @@
 		<Unit filename="CommonFunc.h" />
 		<Unit filename="LineEncoder.cpp" />
 		<Unit filename="LineEncoder.h" />
+		<Unit filename="Line_BPSK_AWGN_Decoder.cpp" />
+		<Unit filename="Line_BPSK_AWGN_Decoder.h" />
 		<Unit filename="Simulator.cpp" />
 		<Unit filename="Simulator.h" />
 		<Unit filename="SourceCreate.cpp" />

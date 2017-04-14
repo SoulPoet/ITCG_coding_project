@@ -3,6 +3,7 @@
 #include "LineEncoder.h"
 #include "BPSK_Modulater.h"
 #include "AWGN_Channel.h"
+#include "Line_BPSK_AWGN_Decoder.h"
 
 #ifndef _ITCG_Simulator_
 	#define _ITCG_Simulator_
@@ -11,8 +12,6 @@
 	public:
 	    double min_snr;
 	    double max_snr;
-	    double snr_step;
-	    double snr;
 
 
 		int blk_num;
@@ -31,6 +30,7 @@
 		FILE *out_file;
 		Encoder enc1;
 		Channel chn1;
+		Decoder dec1;
 
 
 		Simulator();

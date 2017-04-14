@@ -28,17 +28,15 @@ void Simulator::Init(const char *config_file_path) {
             fscanf(in_file, "%lf", &min_snr);
         else if(!strcmp(str, "max_snr"))
             fscanf(in_file, "%lf", &max_snr);
-        else if(!strcmp(str, "snr_step"))
-            fscanf(in_file, "%lf", &snr_step);
         str[0] = '\0';
         fscanf(in_file, "%*c");
     }
 
     enc1.Init(encoder_config_file_path);
     chn1.Init(channel_config_file_path);
-    Debug("bit_num", bit_num);
+    dec1.Init(encoder_config_file_path);
+
     blk_num = enc1.CalcBlkNum(bit_num);
-    Debug("blk_num", blk_num);
     source_signal = new int[bit_num];
     encoded_signal = new int[blk_num * enc1.codeword_len];
     send_signal = new int[blk_num * enc1.codeword_len];
@@ -48,29 +46,23 @@ void Simulator::Init(const char *config_file_path) {
     err_bit_cnt = err_blk_cnt = 0;
 
     out_file = OpenFile(output_file_path, "w");
-
 }
 
 void Simulator::Start() {
-    for(snr = min_snr; snr <= max_snr; snr += snr_step) {
-        SetSeed(-1);
-        chn1.segma = sqrt(Modulater::CntSignalPower() / pow(snr / 10.0, 10.0));
-        SourceCreate::CreateBitStream(source_signal, bit_num);
-        enc1.Encode(source_signal, encoded_signal, blk_num);
-        Modulater::Modulate(encoded_signal, send_signal, blk_num * enc1.codeword_len);
-        chn1.transmit(send_signal, receive_signal, blk_num * enc1.codeword_len);
-        enc1.Decode4BPSK_AWGN(receive_signal, restore_codeword, restore_signal, blk_num);
+    SourceCreate::CreateBitStream(source_signal, bit_num);
+    enc1.Encode(source_signal, encoded_signal, blk_num);
+    Modulater::Modulate(encoded_signal, send_signal, blk_num * enc1.codeword_len);
+    chn1.transmit(send_signal, receive_signal, blk_num * enc1.codeword_len);
+    dec1.Decode(enc1, chn1, receive_signal, restore_codeword, restore_signal, blk_num);
 
-        for(int i = 0; i < bit_num; ++i)
-            if(source_signal[i] != restore_signal[i])
-                ++err_bit_cnt;
-        for(int i = 0; i < blk_num; ++i)
-            if(HammingDistance(encoded_signal + (i * enc1.codeword_len), restore_codeword + (i * enc1.codeword_len), enc1.codeword_len))
-                ++err_blk_cnt;
-        ber = (double)err_bit_cnt / bit_num;
-        fer = (double)err_blk_cnt / blk_num;
-        DisplayResult();
-    }
+    for(int i = 0; i < bit_num; ++i)
+        if(source_signal[i] != restore_signal[i])
+            ++err_bit_cnt;
+    for(int i = 0; i < blk_num; ++i)
+        if(HammingDistance(encoded_signal + (i * enc1.codeword_len), restore_codeword + (i * enc1.codeword_len), enc1.codeword_len))
+            ++err_blk_cnt;
+    ber = (double)err_bit_cnt / bit_num;
+    fer = (double)err_blk_cnt / blk_num;
 }
 
 void Simulator::Clean() {
@@ -82,6 +74,7 @@ void Simulator::Clean() {
     delete[] restore_signal;
     enc1.Clean();
     chn1.Clean();
+    dec1.Clean();
     fclose(out_file);
 }
 
@@ -154,13 +147,11 @@ void Simulator::DisplayRestoreSignal() {
 }
 
 void Simulator::DisplayResult() {
-    /*
     DisplaySourceSignal();
     DisplayEncodedSignal();
     DisplaySendSignal();
     DisplayReceiveSignal();
     DisplayRestoreCodeword();
     DisplayRestoreSignal();
-    */
-    fprintf(out_file, "SNR=%.f, the BER=%.10f, the FER=%.10f\n", snr, ber, fer);
+    fprintf(out_file, "The BER=%.10f\nThe FER=%.10f\n", ber, fer);
 }

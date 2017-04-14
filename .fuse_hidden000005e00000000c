@@ -1,8 +1,5 @@
 bit_num=4000
 encoder_config_file=encoder.ini
 channel_config_file=channel.ini
-min_snr=-3
-max_snr=10
-snr_step=1
 output_file=output.txt
 
