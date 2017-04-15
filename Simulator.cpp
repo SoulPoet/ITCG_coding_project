@@ -45,16 +45,17 @@ void Simulator::Init(const char *config_file_path) {
     receive_signal = new double[blk_num * enc1.codeword_len];
     restore_codeword = new int[blk_num * enc1.codeword_len];
     restore_signal = new int[bit_num];
-    err_bit_cnt = err_blk_cnt = 0;
-
+    
     out_file = OpenFile(output_file_path, "w");
 
 }
 
 void Simulator::Start() {
+    SetSeed(-1);
     for(snr = min_snr; snr <= max_snr; snr += snr_step) {
-        SetSeed(-1);
-        chn1.segma = sqrt(Modulater::CntSignalPower() / pow(snr / 10.0, 10.0));
+        err_bit_cnt = err_blk_cnt = 0;
+        chn1.SetNoisePower(snr, Modulater::CntSignalPower());
+
         SourceCreate::CreateBitStream(source_signal, bit_num);
         enc1.Encode(source_signal, encoded_signal, blk_num);
         Modulater::Modulate(encoded_signal, send_signal, blk_num * enc1.codeword_len);

@@ -57,6 +57,7 @@ double Uniform() {
         state = tmpState;
     else
         state = tmpState + M;
+    }
     return state / (double)M;
 }
 
@@ -90,6 +91,36 @@ double Normal(double mean, double segma) {
 
     return mean + segma * x1 * w;
 
+}
+
+void Normal(int *arr, int len) {
+    double x1, x2, w;
+    int t;
+
+    for (t = 0; ((t << 1) | 1) < len; ++t){
+        w = 2.0;
+        while (w > 1.0){
+            x1 = 2.0 * Uniform() - 1.0;
+            x2 = 2.0 * Uniform() - 1.0;
+            w = x1 * x1 + x2 * x2;
+        }
+
+        w = sqrt(-2.0 * log(w) / w);
+    
+        arr[2 * t] = x1 * w;
+        arr[2 * t + 1] = x2 * w;
+    }
+
+    if (len & 1) {
+        w = 2.0;
+        while (w > 1.0){
+            x1 = 2.0 * Uniform() - 1.0;
+            x2 = 2.0 * Uniform() - 1.0;
+
+            w = x1 * x1 + x2 * x2;
+        }
+        w = sqrt(-2.0 * log(w) / w);
+        arr[len - 1] = x1 * w;
 }
 
 int HammingDistance(int *str1, int *str2, int len) {

@@ -33,3 +33,7 @@ void Channel::Clean() {
 double Channel::CntNoisePower() {
     return segma * segma;
 }
+
+void Channel::SetNoisePower(double snr, double signal_power) {
+    segma = sqrt(signal_power * pow(10.0, -snr / 10.0));
+}
