@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="AWGN_Channel.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+	<File name="Simulator.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5528" topLine="130" />
+		</Cursor>
 	</File>
-	<File name="AWGN_Channel.h" open="1" top="1" tabpos="1">
-		<Cursor position="317" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="BPSK_Modulater.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="CommonFunc.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="CommonFunc.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="SourceCreate.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="CommonFunc.h" open="1" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="CommonFunc.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1088" topLine="106" />
+		</Cursor>
 	</File>
-	<File name="LineEncoder.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="AWGN_Channel.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="168" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="SourceCreate.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="0" topLine="0" />
+	<File name="AWGN_Channel.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="54" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="0" topLine="0" />
+	<File name="LineEncoder.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="358" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="BPSK_Modulater.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

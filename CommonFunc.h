@@ -39,7 +39,7 @@ using namespace std;
 	double Uniform();
 	double Gauss(double mean, double segma, long int &seed);
 	double Normal(double mean, double segma);
-	void Normal(int *arr, int len);
+	void Normal(double *arr, int len);
 	int HammingDistance(int *str1, int *str2, int len);
 	FILE* OpenFile(const char *file_path, const char *mode);
 	double SNR(double sigal_power, double noise_power);

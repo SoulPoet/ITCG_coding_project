@@ -22,8 +22,9 @@ void Channel::Init(const char *config_file_path) {
 
 void Channel::transmit(int *in, double *out, int len) {
     //long int seed = time(NULL);
+    Normal(out, len);
     for(int i = 0; i < len; ++i)
-        out[i] = in[i] + Normal(0.0, segma);
+        out[i] = in[i] + out[i] * segma;
 }
 
 void Channel::Clean() {

@@ -36,9 +36,9 @@ void Simulator::Init(const char *config_file_path) {
 
     enc1.Init(encoder_config_file_path);
     chn1.Init(channel_config_file_path);
-    Debug("bit_num", bit_num);
+
     blk_num = enc1.CalcBlkNum(bit_num);
-    Debug("blk_num", blk_num);
+
     source_signal = new int[bit_num];
     encoded_signal = new int[blk_num * enc1.codeword_len];
     send_signal = new int[blk_num * enc1.codeword_len];
@@ -55,6 +55,7 @@ void Simulator::Start() {
     for(snr = min_snr; snr <= max_snr; snr += snr_step) {
         err_bit_cnt = err_blk_cnt = 0;
         chn1.SetNoisePower(snr, Modulater::CntSignalPower());
+        Debug("Segma", chn1.segma);
 
         SourceCreate::CreateBitStream(source_signal, bit_num);
         enc1.Encode(source_signal, encoded_signal, blk_num);
@@ -163,5 +164,5 @@ void Simulator::DisplayResult() {
     DisplayRestoreCodeword();
     DisplayRestoreSignal();
     */
-    fprintf(out_file, "SNR=%.f, the BER=%.10f, the FER=%.10f\n", snr, ber, fer);
+    fprintf(out_file, "SNR=%.f, the BER=%f, the FER=%f\n", snr, ber, fer);
 }

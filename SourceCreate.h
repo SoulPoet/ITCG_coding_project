@@ -8,6 +8,7 @@
 		SourceCreate();
 		~SourceCreate();
 		static void CreateBitStream(int *bit_stream, int len);
+		static void CreateIntStream(int *int_stream, int len, int max_int);
 	};
 
 #endif

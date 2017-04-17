@@ -2,8 +2,12 @@
 1492134958 source:d:\upload from 424\codes\gcc\itcg_coding_project\awgn_channel.cpp
 	"AWGN_Channel.h"
 
+1492133200 nel.h"
+
 1490693969 d:\upload from 424\codes\gcc\itcg_coding_project\awgn_channel.h
 	"CommonFunc.h"
+
+1492082555 c.h"
 
 1492138773 d:\upload from 424\codes\gcc\itcg_coding_project\commonfunc.h
 	<cstdio>
@@ -20,8 +24,12 @@
 	<stack>
 	<set>
 
+1492138773 
+
 1490596315 source:d:\upload from 424\codes\gcc\itcg_coding_project\bpsk_modulater.cpp
 	"BPSK_Modulater.h"
+
+1490596315 later.h"
 
 1490596315 d:\upload from 424\codes\gcc\itcg_coding_project\bpsk_modulater.h
 	"CommonFunc.h"
@@ -32,6 +40,8 @@
 1492135821 source:d:\upload from 424\codes\gcc\itcg_coding_project\main.cpp
 	"CommonFunc.h"
 	"Simulator.h"
+
+1492139076 .h"
 
 1492133200 d:\upload from 424\codes\gcc\itcg_coding_project\simulator.h
 	"CommonFunc.h"
@@ -52,6 +62,66 @@
 1492137521 source:d:\upload from 424\codes\gcc\itcg_coding_project\sourcecreate.cpp
 	"SourceCreate.h"
 
+1492137521 ate.h"
+
 1492138201 source:d:\upload from 424\codes\gcc\itcg_coding_project\lineencoder.cpp
 	"LineEncoder.h"
+
+1492138201 er.h"
+
+1490596315 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/BPSK_Modulater.cpp
+	"BPSK_Modulater.h"
+
+1490596315 /Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/BPSK_Modulater.h
+	"CommonFunc.h"
+
+1492225676 /Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/CommonFunc.h
+	<cstdio>
+	<cmath>
+	<fstream>
+	<cstring>
+	<algorithm>
+	<iostream>
+	<time.h>
+	<complex>
+	<vector>
+	<queue>
+	<map>
+	<stack>
+	<set>
+
+1492227773 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/LineEncoder.cpp
+	"LineEncoder.h"
+
+1492139921 /Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/LineEncoder.h
+	"CommonFunc.h"
+
+1492226191 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/main.cpp
+	"CommonFunc.h"
+	"Simulator.h"
+
+1492233578 /Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/Simulator.h
+	"CommonFunc.h"
+	"SourceCreate.h"
+	"LineEncoder.h"
+	"BPSK_Modulater.h"
+	"AWGN_Channel.h"
+
+1492225708 /Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/SourceCreate.h
+	"CommonFunc.h"
+
+1492224487 /Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/AWGN_Channel.h
+	"CommonFunc.h"
+
+1492232162 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/AWGN_Channel.cpp
+	"AWGN_Channel.h"
+
+1492225658 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/CommonFunc.cpp
+	"CommonFunc.h"
+
+1492233526 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/Simulator.cpp
+	"Simulator.h"
+
+1492223394 source:/Volumes/BOOTCAMP/Codes/CPP/ITCG_coding_project/SourceCreate.cpp
+	"SourceCreate.h"
 

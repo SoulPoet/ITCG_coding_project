@@ -53,11 +53,10 @@ double Uniform(double a, double b, long int &seed) {
 
 double Uniform() {
     int tmpState = A * ( state % Q ) - R * ( state / Q );
-    if(tmpState >= 0) {
+    if(tmpState >= 0)
         state = tmpState;
     else
         state = tmpState + M;
-    }
     return state / (double)M;
 }
 
@@ -93,7 +92,7 @@ double Normal(double mean, double segma) {
 
 }
 
-void Normal(int *arr, int len) {
+void Normal(double *arr, int len) {
     double x1, x2, w;
     int t;
 
@@ -121,6 +120,7 @@ void Normal(int *arr, int len) {
         }
         w = sqrt(-2.0 * log(w) / w);
         arr[len - 1] = x1 * w;
+    }
 }
 
 int HammingDistance(int *str1, int *str2, int len) {
