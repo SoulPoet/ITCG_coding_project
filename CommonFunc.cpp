@@ -123,10 +123,10 @@ void Normal(double *arr, int len) {
     }
 }
 
-int HammingDistance(int *str1, int *str2, int len) {
+int HammingDistance(int *arr1, int *arr2, int len) {
     int rst = 0;
     for(int i = 0; i < len; ++i)
-        if(str1[i] != str2[i])
+        if(arr1[i] != arr2[i])
             ++rst;
     return rst;
 }
@@ -140,7 +140,7 @@ FILE* OpenFile(const char *file_path, const char *mode) {
     return fp;
 }
 
-double SNR(double sigal_power, double noise_power) {
+double CntSNR(double sigal_power, double noise_power) {
     return 10.0 * log10(sigal_power / noise_power);
 }
 
