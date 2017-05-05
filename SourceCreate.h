@@ -7,8 +7,9 @@
 	public:
 		SourceCreate();
 		~SourceCreate();
+		static void Init(const char *config_file_path);
 		static void CreateBitStream(int *bit_stream, int len);
-		static void CreateIntStream(int *int_stream, int len, int max_int);
+		static void Clean();
 	};
 
 #endif

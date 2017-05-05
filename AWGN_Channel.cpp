@@ -22,19 +22,18 @@ void Channel::Init(const char *config_file_path) {
 
 void Channel::transmit(int *in, double *out, int len) {
     //long int seed = time(NULL);
-    Normal(out, len);
     for(int i = 0; i < len; ++i)
-        out[i] = in[i] + out[i] * segma;
+        out[i] = in[i] + Normal(0.0, segma);
 }
 
 void Channel::Clean() {
 
 }
 
-double Channel::CntNoisePower() {
-    return segma * segma;
+void Channel::SetNoisePower(double noise_power) {
+    segma = sqrt(noise_power);
 }
 
-void Channel::SetNoisePower(double snr, double signal_power) {
-    segma = sqrt(signal_power * pow(10.0, -snr / 10.0));
+double Channel::CntNoisePower() {
+    return segma * segma;
 }

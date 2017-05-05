@@ -75,7 +75,8 @@ void Encoder::Decode4BPSK_AWGN(double *in, int *imd, int *out, int blk_num) {
             imd[imd_idx] = codebook[target_codeword_idx][j];
 
         for(j = 0; j < message_blk_len; ++j, ++out_idx) {
-            out[out_idx] = (target_codeword_idx >> (message_blk_len - 1 - j)) & 1;
+            out[out_idx] = target_codeword_idx & 1;
+            target_codeword_idx >>= 1;
         }
     }
 }
@@ -87,5 +88,5 @@ void Encoder::Clean() {
 }
 
 int Encoder::CalcBlkNum(int bit_num) {
-    return bit_num / message_blk_len;
+    return bit_num / codeword_num;
 }

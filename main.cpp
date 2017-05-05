@@ -3,8 +3,7 @@
 
 int main() {
     Simulator s;
-    const char *config_file_path = "Simulator.ini";
-    s.Init(config_file_path);
+    s.Init("Simulator.ini");
     s.Start();
     //s.DisplayResult();
     s.Clean();

@@ -52,12 +52,23 @@ double Uniform(double a, double b, long int &seed) {
 }
 
 double Uniform() {
+
+    double u;
+
     int tmpState = A * ( state % Q ) - R * ( state / Q );
-    if(tmpState >= 0)
+
+    if ( tmpState >= 0)
+    {
         state = tmpState;
+    }
     else
+    {
         state = tmpState + M;
-    return state / (double)M;
+    }
+
+    u = state / (double)M;
+
+    return u;
 }
 
 double Gauss(double mean, double segma, long int &seed) {
@@ -92,41 +103,10 @@ double Normal(double mean, double segma) {
 
 }
 
-void Normal(double *arr, int len) {
-    double x1, x2, w;
-    int t;
-
-    for (t = 0; ((t << 1) | 1) < len; ++t){
-        w = 2.0;
-        while (w > 1.0){
-            x1 = 2.0 * Uniform() - 1.0;
-            x2 = 2.0 * Uniform() - 1.0;
-            w = x1 * x1 + x2 * x2;
-        }
-
-        w = sqrt(-2.0 * log(w) / w);
-    
-        arr[2 * t] = x1 * w;
-        arr[2 * t + 1] = x2 * w;
-    }
-
-    if (len & 1) {
-        w = 2.0;
-        while (w > 1.0){
-            x1 = 2.0 * Uniform() - 1.0;
-            x2 = 2.0 * Uniform() - 1.0;
-
-            w = x1 * x1 + x2 * x2;
-        }
-        w = sqrt(-2.0 * log(w) / w);
-        arr[len - 1] = x1 * w;
-    }
-}
-
-int HammingDistance(int *arr1, int *arr2, int len) {
+int HammingDistance(int *str1, int *str2, int len) {
     int rst = 0;
     for(int i = 0; i < len; ++i)
-        if(arr1[i] != arr2[i])
+        if(str1[i] != str2[i])
             ++rst;
     return rst;
 }
@@ -140,7 +120,7 @@ FILE* OpenFile(const char *file_path, const char *mode) {
     return fp;
 }
 
-double CntSNR(double sigal_power, double noise_power) {
+double SNR(double sigal_power, double noise_power) {
     return 10.0 * log10(sigal_power / noise_power);
 }
 

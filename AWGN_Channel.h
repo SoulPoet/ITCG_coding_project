@@ -10,10 +10,10 @@
         Channel();
         ~Channel();
         void Init(const char *config_file_path);
-        void transmit(int *in, double *out, int len);
+        void SetNoisePower(double noise_power);
+        void Transmit(int *in, double *out, int len);
         void Clean();
         double CntNoisePower();
-        void SetNoisePower(double snr, double signal_power);
     };
 
 #endif
