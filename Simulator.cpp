@@ -15,6 +15,7 @@ void Simulator::Init(const char *config_file_path) {
     char output_file_path[50];
 
     m_save_temp_info = false;
+    blk_num = 100;
 
     FILE *in_file = OpenFile(config_file_path, "r");
     while(~fscanf(in_file, "%[a-z_]=", str)) {
@@ -32,6 +33,8 @@ void Simulator::Init(const char *config_file_path) {
             fscanf(in_file, "%lf", &max_snr);
         else if(!strcmp(str, "snr_step"))
             fscanf(in_file, "%lf", &snr_step);
+        else if(!strcmp(str, "target_err_blk"))
+            fscanf(in_file, "%d", &m_target_err_blk);
         else if(!strcmp(str, "temp_file")) {
             m_save_temp_info = true;
             fscanf(in_file, "%s", m_temp_file);
@@ -69,8 +72,8 @@ void Simulator::Start() {
             objChannel.Transmit(m_send_signal, m_receive_signal, blk_num * objCodec.codeword_len);
             objCodec.Decode4BPSK_AWGN(m_receive_signal, m_restore_codeword, m_restore_signal, blk_num);
             for(int i = 0; i < bit_num; ++i)
-            if(m_source_signal[i] != m_restore_signal[i])
-                ++m_err_bit_cnt;
+                if(m_source_signal[i] != m_restore_signal[i])
+                    ++m_err_bit_cnt;
             for(int i = 0; i < blk_num; ++i)
                 if(HammingDistance(m_encoded_signal + (i * objCodec.codeword_len), m_restore_codeword + (i * objCodec.codeword_len), enc1.codeword_len))
                     ++err_blk_cnt;
